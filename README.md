@@ -1,6 +1,10 @@
 # World Computer Project
 
-**Project Description**: the aim of this project is to build a device that contains no major hardware components, including, but not limited to, storage, memory, CPUs, and GPUs. Instead, all of the computationally intensive tasks are offloaded to fully rigged computers, and are only done so on-demand.
+**Project Description**: the aim of this project is to build a device that contains no major hardware components, including, but not limited to, storage, memory, CPUs, and GPUs. Instead, all of the computationally intensive tasks are offloaded to fully rigged computers, and are only done so *on-demand*. 
+
+    - *Reduction in the cost of user-end devices*. The logic behind this stems from the fact that even when users’ computers 
+      are powered on, most of their computational resources are sitting idle most of the time. In our case, computational 
+      resources never sit idle – computation is provided and payed for on-demand.
 
 The following repository contains two files:
     

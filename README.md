@@ -1,6 +1,6 @@
 # World Computer Project
 
-Project Description: the aim of this project is to build a device that contains no major hardware components, including, but not limited to, storage, memory, CPUs, and GPUs. Instead, all of the computationally intensive tasks are offloaded to fully rigged computers, and are only done so on-demand.
+**Project Description**: the aim of this project is to build a device that contains no major hardware components, including, but not limited to, storage, memory, CPUs, and GPUs. Instead, all of the computationally intensive tasks are offloaded to fully rigged computers, and are only done so on-demand.
 
 The following repository contains two files:
     

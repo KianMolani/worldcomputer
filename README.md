@@ -4,6 +4,6 @@
 
 The following repository contains two files:
     
-    - a document detailing my preliminary research findings
+    - a document detailing preliminary research findings
     
-    - a python program (show-cased at ETHSanFranciso 2018) that offloads the processing required to calculate the area underneath a curve       to two other computers to run in parallel. Payment is made to the two computers via microtransactions on the Ethereum network.
+    - a python program (showcased at ETHSanFranciso 2018) that has a device ('world computer') offload the processing required to               calculate the area underneath a curve to two computers ('worker nodes') to run in parallel. Payment is made by the world computer to       the worker nodes via microtransactions on the Ethereum network. Metrics used to calculate the payment amount was CPU clock cycles         and dedicated storage, not bandwidth. APIs used: MPI (message passing interface), web3, Infura

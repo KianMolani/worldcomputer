@@ -11,7 +11,7 @@ size = comm.size # size of all processes
 cpu_to_eth_rate = 0.01 # 0.01 ETH/second of cpu time
 mem_to_eth_rate = 0.005 # 0.005 ETH/MB of memory space
 
-web3 = Web3(HTTPProvider("https://ropsten.infura.io/v3/6e7e72b8ca844879b9ecc344bd8965df")) # connect to Infura host node in order to connect with Ethereum network (Ropsten)
+web3 = Web3(HTTPProvider("ENTER INFURA KEY HERE (ROPSTEN NETWORK)")) # connect to Infura host node in order to connect with Ethereum network (Ropsten)
 
 # returns memory usage for process in MB
 def memory_usage_psutil():
@@ -64,8 +64,8 @@ def send_ether_to_wallet(wallet_address_from, wallet_address_to, wallet_private_
 
 def main ():
     if rank == 0: # world computer
-        wallet_private_key = "cfcb8acfd0b4c64a6b6366f79c97aa7502396ffd6c61dc92c8e8befcafa72311"
-        wallet_address_from = web3.toChecksumAddress("0x93501acf5ec5f2ee2c1372142762d9bb75e8b607")
+        wallet_private_key = "ENTER PRIVATE KEY HERE"
+        wallet_address_from = web3.toChecksumAddress("ENTER WALLET ADDRESS HERE")
 
         # define limits of integral and number of points used in Reimann's sum
         lower_lim = -1.0

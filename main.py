@@ -8,10 +8,10 @@ comm = MPI.COMM_WORLD # commutator
 rank = comm.rank # rank of process
 size = comm.size # size of all processes
 
-cpu_to_eth_rate = 0.01 # 0.01 ETH/second of cpu time
-mem_to_eth_rate = 0.005 # 0.005 ETH/MB of memory space
+cpu_to_eth_rate = 0.01 # 0.01 ETH/second of cpu time (arbitrary)
+mem_to_eth_rate = 0.005 # 0.005 ETH/MB of memory space (arbitrary)
 
-web3 = Web3(HTTPProvider("ENTER INFURA KEY HERE (ROPSTEN NETWORK)")) # connect to Infura host node in order to connect with Ethereum network (Ropsten)
+web3 = Web3(HTTPProvider("ENTER INFURA KEY FOR ROPSTEN NETWORK HERE")) # connect to Ethereum (Ropsten) network through Infura host node
 
 # returns memory usage for process in MB
 def memory_usage_psutil():

@@ -25,7 +25,7 @@ size = comm.size  # size of all processes
 cpu_to_eth_rate = 0.01  # 0.01 ETH/second of cpu time (arbitrary)
 mem_to_eth_rate = 0.005  # 0.005 ETH/MB of memory space (arbitrary)
 
-web3 = Web3(HTTPProvider("https://ropsten.infura.io/v3/6e7e72b8ca844879b9ecc344bd8965df"))  # connect to Ethereum network via Infura host node
+web3 = Web3(HTTPProvider("ENTER INFURA ROPSTEN ENDPOINT HERE"))  # connect to Ethereum network via Infura host node
 
 
 # returns memory usage for process in MB
@@ -88,8 +88,8 @@ def send_ether_to_wallet(wallet_address_from, wallet_address_to, wallet_private_
 
 def main():
     if rank == 0:  # rank 0 given to world computer (i.e. device requesting use of computational resources)
-        wallet_private_key = "cfcb8acfd0b4c64a6b6366f79c97aa7502396ffd6c61dc92c8e8befcafa72311"  # WARNING: CONSIDERING THAT THE SAME MPI PROGRAM IS SHARED BETWEEN NODES, WALLET PRIVATE KEY SHOULD NOT BE CONTAINED WITHIN SOURCE CODE
-        wallet_address_from = web3.toChecksumAddress("0x93501acf5eC5f2ee2C1372142762D9BB75e8B607")
+        wallet_private_key = "ENTER WORLD COMPUTER PRIVATE KEY HERE"  # WARNING: CONSIDERING THAT THE SAME MPI PROGRAM IS SHARED BETWEEN NODES, WALLET PRIVATE KEY SHOULD NOT BE CONTAINED WITHIN SOURCE CODE
+        wallet_address_from = web3.toChecksumAddress("ENTER WORLD COMPUTER WALLET ADDRESS HERE")
 
         # define limits of integral and number of points used in Reimann's sum
         lower_lim = -1.0
@@ -116,7 +116,7 @@ def main():
         wallet_address_to = comm.recv(source=2, tag=6)  # receive wallet address of worker node #2
         send_ether_to_wallet(wallet_address_from, wallet_address_to, wallet_private_key, fee)  # send ether to worker node #2
     elif rank == 1:  # rank 1 given to worker node #1
-        wallet_address_to = web3.toChecksumAddress("0x4DAb2824A4dF9ac5366Cd381839192A2223E3bEd")
+        wallet_address_to = web3.toChecksumAddress("ENTER WORKER NODE #1 WALLET ADDRESS HERE")
 
         # receive variable information sent from world computer
         lower_lim = comm.recv(source=0, tag=0)
@@ -141,7 +141,7 @@ def main():
         print("\nRank " + str(rank) + " out of " + str(size) + " processors (worker node #1) -- Area of left half: " + str(area_left_half) + "; CPU time: "
               + str(cpu_time) + "s; " + "Memory usage: " + str(mem_usg) + "MB")
     elif rank == 2:  # rank 2 given to worker node #2
-        wallet_address_to = web3.toChecksumAddress("0x14CB89A6154048EAe1991d4A1e13a6B8Cc59F97B")
+        wallet_address_to = web3.toChecksumAddress("ENTER WORKER NODE #2 WALLET ADDRESS HERE")
 
         # receive variable information sent from world computer
         lower_lim = comm.recv(source=0, tag=0)

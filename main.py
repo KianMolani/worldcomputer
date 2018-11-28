@@ -115,6 +115,7 @@ def main():
         fee = comm.recv(source=2, tag=5)  # receive fee amount from worker node #2
         wallet_address_to = comm.recv(source=2, tag=6)  # receive wallet address of worker node #2
         send_ether_to_wallet(wallet_address_from, wallet_address_to, wallet_private_key, fee)  # send ether to worker node #2
+    
     elif rank == 1:  # rank 1 given to worker node #1
         wallet_address_to = web3.toChecksumAddress("ENTER WORKER NODE #1 WALLET ADDRESS HERE")
 
@@ -138,8 +139,8 @@ def main():
         comm.send(fee, dest=0, tag=4)  # send fee amount to world computer
         comm.send(wallet_address_to, dest=0, tag=5)  # send wallet address to world computer
 
-        print("\nRank " + str(rank) + " out of " + str(size) + " processors (worker node #1) -- Area of left half: " + str(area_left_half) + "; CPU time: "
-              + str(cpu_time) + "s; " + "Memory usage: " + str(mem_usg) + "MB")
+        print("\nRank " + str(rank) + " out of " + str(size) + " processors (worker node #1) -- Area of left half: " + str(area_left_half) + "; CPU time: " + str(cpu_time) + "s; " + "Memory usage: " + str(mem_usg) + "MB")
+    
     elif rank == 2:  # rank 2 given to worker node #2
         wallet_address_to = web3.toChecksumAddress("ENTER WORKER NODE #2 WALLET ADDRESS HERE")
 
@@ -155,8 +156,7 @@ def main():
         cpu_time = time.process_time()
         mem_usg = memory_usage_psutil()
 
-        print("\nRank " + str(rank) + " out of " + str(size) + " processors (worker node #2) -- Area of right half: " + str(area_right_half) + "; CPU time: "
-              + str(cpu_time) + "s; " + "Memory usage: " + str(mem_usg) + "MB")
+        print("\nRank " + str(rank) + " out of " + str(size) + " processors (worker node #2) -- Area of right half: " + str(area_right_half) + "; CPU time: " + str(cpu_time) + "s; " + "Memory usage: " + str(mem_usg) + "MB")
 
         area_left_half = comm.recv(source=1, tag=3) # receive area of left half from worker node #1
         area_total = area_left_half + area_right_half # sum areas of right half and left half together
@@ -171,7 +171,6 @@ def main():
         comm.send(fee, dest=0, tag=5)  # send fee amount to world computer
         comm.send(wallet_address_to, dest=0, tag=6)  # send wallet address to world computer
 
-        print("\nRank " + str(rank) + " out of " + str(size) + " processors (worker node #2) -- Total area: " + str(area_total) + "; CPU time (updated): "
-              + str(cpu_time) + "s; " + "Memory usage (updated): " + str(mem_usg) + "MB. Sending solution to world computer...\n")
+        print("\nRank " + str(rank) + " out of " + str(size) + " processors (worker node #2) -- Total area: " + str(area_total) + "; CPU time (updated): " + str(cpu_time) + "s; " + "Memory usage (updated): " + str(mem_usg) + "MB. Sending solution to world computer...\n")
 
 main()

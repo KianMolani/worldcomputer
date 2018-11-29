@@ -1,6 +1,6 @@
 # World Computer Project
 
-The aim of this project is to build a fully functioning device that contains no major internal hardware components, including, but not limited to, storage, memory, CPUs, and GPUs. Instead, all of the computationally intensive tasks are offloaded to fully rigged computers, and are only done so *on-demand*.
+The aim of this project is to build a fully functioning device that contains no major internal hardware components, including, but not limited to, storage, memory, CPUs, and GPUs. Instead, all of the computationally intensive tasks are offloaded to fully rigged computers, and are only done so *on-demand*. These computers then send back bitmaps to the device so that it can display the rendered frame on its own screen.
 
 This repository contains two primary files:
 

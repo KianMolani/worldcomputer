@@ -20,8 +20,22 @@
 
 **Model Diagram**:
 
+--
+
 The following repository contains two files:
 
-    1. A document detailing preliminary research findings
+1. A document detailing preliminary research findings
 
-    2. A python program that has a device (the "world computer") offload to two computers (the "worker nodes") the computation necessary          to calculate the area underneath a curve. Payment is made by the world computer to the worker nodes via microtransactions made            over the Ethereum network. The metrics used to calculate the payment amount are dedicated CPU time and memory space. In future            versions, additional charges will be made on the basis of bandwidth. Ultimately, this program makes practical use of several              important and relevant topics, such as: computational offloading and distributed and parallel computing. The APIs used as part of          this program are: mpi4py (Message Passing Interface for Python), web3, and Infura.
+2. A python program that has a device (the "world computer") offload to two computers (the "worker nodes") the computation necessary to calculate the area underneath a curve. Payment is made by the world computer to the worker nodes via microtransactions made over the Ethereum network. The metrics used to calculate the payment amount are dedicated CPU time and memory space. In future versions, additional charges will be made on the basis of bandwidth. Ultimately, this program makes practical use of several important and relevant topics, such as: computational offloading and distributed and parallel computing. The APIs used as part of this program are: mpi4py (Message Passing Interface for Python), web3, and Infura.
+
+To run the code, follow these steps:
+
+1. download an MPI implementation. For MPICH, go to terminal and type brew install mpich
+
+2. download python3, mpi4py
+
+3. download repository, and replace with own Infura node, wallet address, and private keys
+
+4. In terminal, navigate to repository
+
+5. type 'mpiexec -n 3 python3 main.py'

@@ -35,3 +35,6 @@ This repository contains two primary files:
 3. Type and run the following command in terminal:
 
         mpiexec -n 3 python3 main.py
+        
+ 
+ Note: The program takes a few minutes to run to completion,since it waits for the transactions to be mined onto the network.

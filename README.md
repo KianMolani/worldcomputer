@@ -1,41 +1,37 @@
 # World Computer Project
 
-**Project Description**: the aim of this project is to build a device that contains no major hardware components, including, but not limited to, storage, memory, CPUs, and GPUs. Instead, all of the computationally intensive tasks are offloaded to fully rigged computers, and are only done so *on-demand*. The anticipated benefits of this model are:
+The aim of this project is to build a device that contains no major hardware components, including, but not limited to, storage, memory, CPUs, and GPUs. Instead, all of the computationally intensive tasks are offloaded to fully rigged computers, and are only done so *on-demand*.
 
-* *Reduction in the cost of user-end devices*. The logic behind this stems from the fact that even when users’ computers are powered on, most of their computational resources are sitting idle most of the time. In our case, computational resources never sit idle – computation is provided and payed for on-demand.
+This repository contains two primary files:
 
-* *A more varied, flexible, and powerful array of display technologies*. Displays are one of the most actively developed technologies on consumer markets today. However, it is sometimes difficult to integrate these advancements into users’ devices. With much of the internal hardware out of the way, however, it becomes easier for consumer devices to make use of technologies such as flexible OLEDS, smart glasses (which are usually thick and clunky), and bionic contact lenses.
+1. A document detailing preliminary research findings, the purpose of which is to test the technical limitations of this technology and see if it is economically viable.
 
-* *Limitless performance*. If well managed, users should never have their performance bottle- necked by limiting hardware components. If a user needs more computational resources to carry out their tasks without performance losses, they will get it. This provides for a better and more consistent user-experience.
+2. A python program that has a device (the "world computer") offload to two computers (the "worker nodes") the computation necessary to calculate the area underneath a curve. Payment is made by the world computer to the worker nodes via microtransactions made over the Ethereum network. The metrics used to calculate the payment amount are dedicated CPU time and memory space. In future versions, additional charges will be made on the basis of bandwidth. This program makes practical use of several important and relevant topics, mainly computational offloading and distributed and parallel computing. The APIs used as part of this program are: mpi4py (Message Passing Interface for Python), web3, and Infura.
 
-* *Contiguous performance across all form factors*. All user-end devices, no matter the size or form of its display, can tap into the same levels of computational resources, since none of that hardware is located internally within the devices themselves. Today, larger devices with larger displays can afford to pack in more powerful hardware components, while smaller devices with smaller displays cannot. This places limits on the use-cases that are made available across different device form factors.
+## Prerequisites
 
-* *Contiguous user-experience and interfaces across all form factors*. Since all of the computation is done and managed externally, over time users can set up hardware and software profiles across all of their devices. Again, since the computational capacity across each device does not vary, all devices can afford to run the same set of software applications. This makes user-experiences between devices more contiguous.
+* An implementation of MPI. For our python program, use mpich. For Mac users, mpich can be installed using the following command in terminal:
 
-* *Reduced power requirements and longer battery life*. This allows for the further development of technologies where power requirements are an issue (see bionic contact lens).
+      brew install mpich
 
-* *Limitless device life-cycles*. Because it is no longer users’ responsibilities to maintain and upgrade their hardware, their devices can, in theory, be used forever. The incentive to upgrade their devices comes from the introduction of newer and more advanced displays, cameras, etc. If users happen to damage their devices, replacement costs will be cheaper (refer to first point).
+* Python3. For Mac users, python3 can be installed using the following command in terminal:
 
-* *Reduction of electronic waste*. If the entity buying and managing the actual computers/worker nodes is a corporation, they might be more incentivized to recycle their hardware components than consumers are.
+      brew install python3
 
-**Model Diagram**:
+* MPI for Python package. For Mac users, mpi4py can be installed using the following command in terminal:
 
---
+      pip3 install mpi4py
+      
+* web3 API for Python. For Mac users, web3.py can be installed using the following command in terminal:
 
-The following repository contains two files:
+      pip install web3
 
-1. A document detailing preliminary research findings
+## Usage
 
-2. A python program that has a device (the "world computer") offload to two computers (the "worker nodes") the computation necessary to calculate the area underneath a curve. Payment is made by the world computer to the worker nodes via microtransactions made over the Ethereum network. The metrics used to calculate the payment amount are dedicated CPU time and memory space. In future versions, additional charges will be made on the basis of bandwidth. Ultimately, this program makes practical use of several important and relevant topics, such as: computational offloading and distributed and parallel computing. The APIs used as part of this program are: mpi4py (Message Passing Interface for Python), web3, and Infura.
+1. After downloading the repository, go into main.py and modify lines 28, 91, 92, 120, and 145 with the appropriate keys and addresses.
 
-To run the code, follow these steps:
+2. In terminal, navigate to the directory of the downloaded repository.
 
-1. download an MPI implementation. For MPICH, go to terminal and type brew install mpich
+3. Type and run the following command in terminal:
 
-2. download python3, mpi4py
-
-3. download repository, and replace with own Infura node, wallet address, and private keys
-
-4. In terminal, navigate to repository
-
-5. type 'mpiexec -n 3 python3 main.py'
+        mpiexec -n 3 python3 main.py

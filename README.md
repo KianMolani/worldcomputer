@@ -1,12 +1,16 @@
 # World Computer Project
 
-The aim of this project is to build a fully functioning device that contains no major internal hardware components, including, but not limited to, storage, memory, CPUs, and GPUs. Instead, all of the computationally intensive tasks are offloaded to fully rigged computers, and are only done so *on-demand*. These computers then send back bitmaps to the device so that it can display the rendered frame on its own screen.
+The aim of this project is to build a fully functioning device that contains no major internal hardware components, including but not limited to, storage, memory, CPUs, and GPUs. Instead, all of the computationally intensive tasks are offloaded to a decentralized network of computers, and are only done so *on-demand*. Requests made by this device might include, amongst other things, the rendering of images, in which case the computers doing the rendering will send bitmaps back to the device for it to display.
 
-This repository contains two primary files:
+This project folder contains multiple files:
 
-1. A document detailing preliminary research findings, the purpose of which is to test the technical limitations of this technology and see if it is economically viable.
+* A document detailing preliminary research findings, the purpose of which is to test the technical limitations of this technology and see if it is economically viable
 
-2. A python program that has a device (the "world computer") offload to two computers (the "worker nodes") the computation necessary to calculate the area underneath a curve. Payment is made by the world computer to the worker nodes via microtransactions made over the Ethereum network. The metrics used to calculate the payment amount are dedicated CPU time and memory space. In future versions, additional charges will be made on the basis of bandwidth. This program makes practical use of several important and relevant topics, mainly computational offloading and distributed and parallel computing. The APIs used as part of this program are: mpi4py (Message Passing Interface for Python), web3, and Infura.
+* A python program that has a device offload to two computers (i.e. world computers) the computation necessary to calculate the area underneath a curve. Parallelization of the task is handled with the help of the Message Passing Interface (MPI). Payment is made by the device to the world computers via microtransactions made over the Ethereum network. The metrics used to calculate the payment amount are dedicated CPU time and memory space. In future versions, additional charges will be made on the  basis of bandwidth. The APIs used as part of this program are: mpi4py (Message Passing Interface for Python), web3, and Infura
+
+* Arduino code used to integrate an LCD display and two ESP-01 ESP8266 wifi modules to the network
+
+Development of the project is part of a broader investigation on the effectiveness of computational offloading as a use case for 5G. I have written a Medium article that describes in more detail my motivation for this endeavor: https://medium.com/@kianmolani/the-world-computer-evolving-past-the-smartphone-era-65643cbd1560
 
 ## Prerequisites
 
